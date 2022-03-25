@@ -1,8 +1,11 @@
 import React from 'react';
 import './Cart.css'
-const Cart = (props) => {
+
+
+
+const Cart = ({flower,handleAddToCart}) => {
   
-    const {name,id,price,url}=props.flower
+    const {name,price,url}=flower;
 
 
     return (
@@ -15,7 +18,9 @@ const Cart = (props) => {
                    <h6 className='flower-name'>Name : {name}</h6>
                    <p>Price : ${price}</p>
                </div>
-               <button className='btn-cart'>Add to cart</button>
+               <button className='btn-cart'
+               onClick={()=> handleAddToCart(flower)}
+               >Add to cart</button>
            </div>
         </div>
     );

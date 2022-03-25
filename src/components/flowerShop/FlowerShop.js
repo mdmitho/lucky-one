@@ -7,13 +7,22 @@ import './FlowerShop.css'
 
 const FlowerShop = () => {
   const  [flowers, setFlowers] =useState([])
-  console.log(flowers)
+  const [addflowers,setAddflowefa]=useState([])
+//   console.log(addflowers)
 
   useEffect(()=>{
       fetch('flowers.json')
       .then(res => res.json())
       .then(data => setFlowers(data))
   },[])
+ 
+  const handleAddToCart =(flower)=>{
+     const newFlower =[...addflowers,flower]
+     setAddflowefa(newFlower)
+  }
+
+
+
 
     return (
       
@@ -23,12 +32,25 @@ const FlowerShop = () => {
                         flowers.map(flower => <Cart
                         key = {flower.id}
                         flower={flower}
+                        handleAddToCart ={handleAddToCart}
                         ></Cart>)
                     }
                 </div>
+  
 
-                <div className="">
-                    <h1>hdhsdks</h1>
+               
+                <div className="selected-flower">
+                  <div className="selected-item">
+                  <h3>Selected Flower</h3>
+                
+                {
+                    addflowers.map((item)=>(
+                        <h5>Name : {item.name}</h5>
+                    ))
+                }
+                <button className='choose-btn'>CHOOSE 1 fOR ME</button>  <br /><br />
+                <button className='choose-btn'>CHOOSE AGAIN</button>
+                  </div>
                 </div>
             </div>
               

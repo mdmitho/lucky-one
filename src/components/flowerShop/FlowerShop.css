@@ -7,3 +7,45 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 45px;
 }
+.selected-flower{
+    background-color: aqua;
+    height: 2000px;
+    width: auto;
+
+
+}
+.selected-item{
+    position: sticky;
+    top: 0%;
+    padding: 30px 20px;
+}
+
+.choose-btn{
+    background-color: rgb(221, 163, 192);
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+}
+.choose-btn:hover{
+background-color: rgb(48, 131, 131);
+color: white;
+}
+@media screen and (max-width:767px) {
+    .flower{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .selected-item h5{
+        font-size: 10px;
+        
+    }
+    .choose-btn {
+        margin: 5px;
+
+         font-size: 12px;
+    }
+    .selected-flower{
+        height: 5900px;
+    width: auto;
+    }
+}
