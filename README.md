@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Flower Shope
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [See My Website link](https://unrivaled-fairy-9c6493.netlify.app/).
 
 ## Available Scripts
 

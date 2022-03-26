@@ -8,7 +8,7 @@ import './FlowerShop.css'
 const FlowerShop = () => {
   const  [flowers, setFlowers] =useState([])
   const [addflowers,setAddflowefa]=useState([])
-//   console.log(addflowers)
+ 
 
   useEffect(()=>{
       fetch('flowers.json')
@@ -17,15 +17,44 @@ const FlowerShop = () => {
   },[])
  
   const handleAddToCart =(flower)=>{
-     const newFlower =[...addflowers,flower]
+    let newFlower =[]
+  
+    const exits = addflowers.find(flowers=> flowers.id === flower.id)
+    if(!exits){
+      flower.quantity= 1
+      newFlower=[...addflowers,flower]
+    }
+    else{
+      const rests = addflowers.filter(flowers=>flowers.id !== flower.id)
+      exits.quantity =exits.quantity +1
+      newFlower=[...rests,exits]
+     }
+    
      setAddflowefa(newFlower)
+     
+     
   }
 
+  const handleChooseForMe =(addflowers) =>{
+console.log(addflowers)
 
 
+   for(const shoocseforme of addflowers){
+
+
+    console.log(shoocseforme);
+   }
+    // console.log(addflowers)
+
+    // let addChooseForMe=[]
+    //      const forme= addflowers.length
+    //    const chooseforme =addflowers.find(flower => flower>4)
+      
+    //    serChoocseforme(chooseforme)
+
+  }
 
     return (
-      
             <div className="flower-shop">
                 <div className="flower">
                     {
@@ -36,20 +65,22 @@ const FlowerShop = () => {
                         ></Cart>)
                     }
                 </div>
-  
-
-               
                 <div className="selected-flower">
                   <div className="selected-item">
                   <h3>Selected Flower</h3>
                 
+                <div id='selected-item'>
+
+                  
                 {
                     addflowers.map((item)=>(
-                        <h5>Name : {item.name}</h5>
+                        <h5><img className='cart-img' src={item.url} alt="" />  {item.name}</h5>
                     ))
                 }
-                <button className='choose-btn'>CHOOSE 1 fOR ME</button>  <br /><br />
-                <button className='choose-btn'>CHOOSE AGAIN</button>
+                </div>
+                
+                <button onClick={()=>handleChooseForMe(addflowers)} className='choose-btn'>CHOOSE 1 fOR ME</button>  <br /><br />
+                <button  className='choose-btn'>CHOOSE AGAIN</button>
                   </div>
                 </div>
             </div>
