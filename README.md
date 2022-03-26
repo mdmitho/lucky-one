@@ -1,6 +1,6 @@
 # Flower Shope
 
-This project was bootstrapped with [See My Website link](https://unrivaled-fairy-9c6493.netlify.app/).
+This project copyright © Md hossen [See My Website link](https://unrivaled-fairy-9c6493.netlify.app/).
 
 ## Available Scripts
 

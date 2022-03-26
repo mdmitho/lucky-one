@@ -54,6 +54,17 @@ console.log(addflowers)
 
   }
 
+  const handleChooseAgain = () => {
+    
+    const ChooseAgain = document.getElementById('selected-item')
+    ChooseAgain.innerHTML=''
+    
+    window.setTimeout( function() {
+      window.location.reload();
+    }, );
+
+  }
+
     return (
             <div className="flower-shop">
                 <div className="flower">
@@ -80,7 +91,7 @@ console.log(addflowers)
                 </div>
                 
                 <button onClick={()=>handleChooseForMe(addflowers)} className='choose-btn'>CHOOSE 1 fOR ME</button>  <br /><br />
-                <button  className='choose-btn'>CHOOSE AGAIN</button>
+                <button onClick={()=>handleChooseAgain()} className='choose-btn'>CHOOSE AGAIN</button>
                   </div>
                 </div>
             </div>
