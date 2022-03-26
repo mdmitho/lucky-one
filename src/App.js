@@ -1,6 +1,7 @@
 
 import './App.css';
 import FlowerShop from './components/flowerShop/FlowerShop';
+import Qusan from './components/qusan/Qusan';
 
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
         <h5 className='mt-3'>আপনার পছন্দের ফুল কিনুন</h5>
       </div>
       <FlowerShop></FlowerShop>
-
+     <Qusan></Qusan>
     </div>
 
 

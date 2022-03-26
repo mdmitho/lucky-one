@@ -20,30 +20,37 @@ const FlowerShop = () => {
     let newFlower =[]
   
     const exits = addflowers.find(flowers=> flowers.id === flower.id)
-    if(!exits){
-      flower.quantity= 1
-      newFlower=[...addflowers,flower]
+    if(addflowers.length>3){
+      alert('sorry! Does not item selected')
     }
     else{
-      const rests = addflowers.filter(flowers=>flowers.id !== flower.id)
-      exits.quantity =exits.quantity +1
-      newFlower=[...rests,exits]
-     }
+      if(!exits){
+        flower.quantity= 1
+        newFlower=[...addflowers,flower]
+      }
+      else{
+        const rests = addflowers.filter(flowers=>flowers.id !== flower.id)
+        exits.quantity =exits.quantity +1
+        newFlower=[...rests,exits]
+       }
+       setAddflowefa(newFlower)
+    }
     
-     setAddflowefa(newFlower)
+     
      
      
   }
 
   const handleChooseForMe =(addflowers) =>{
-console.log(addflowers)
+// console.log(addflowers)
+// const chooseMe =addflowers.filter(flower => flower>addflowers)
+// console.log(chooseMe);
 
+  //  for(const shoocseforme of addflowers){
+    
 
-   for(const shoocseforme of addflowers){
-
-
-    console.log(shoocseforme);
-   }
+    
+  //  }
     // console.log(addflowers)
 
     // let addChooseForMe=[]
@@ -58,7 +65,7 @@ console.log(addflowers)
     
     const ChooseAgain = document.getElementById('selected-item')
     ChooseAgain.innerHTML=''
-    
+
     window.setTimeout( function() {
       window.location.reload();
     }, );

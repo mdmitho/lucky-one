@@ -26,7 +26,9 @@ const Cart = ({flower,handleAddToCart}) => {
                
                </button>
            </div>
+          
         </div>
+        
     );
 };
 
