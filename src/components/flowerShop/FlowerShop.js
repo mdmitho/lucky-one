@@ -8,7 +8,7 @@ import './FlowerShop.css'
 const FlowerShop = () => {
   const  [flowers, setFlowers] =useState([])
   const [addflowers,setAddflowefa]=useState([])
- 
+
 
   useEffect(()=>{
       fetch('flowers.json')
@@ -40,24 +40,9 @@ const FlowerShop = () => {
      
      
   }
+ 
+  const handleChooseForMe =() =>{
 
-  const handleChooseForMe =(addflowers) =>{
-// console.log(addflowers)
-// const chooseMe =addflowers.filter(flower => flower>addflowers)
-// console.log(chooseMe);
-
-  //  for(const shoocseforme of addflowers){
-    
-
-    
-  //  }
-    // console.log(addflowers)
-
-    // let addChooseForMe=[]
-    //      const forme= addflowers.length
-    //    const chooseforme =addflowers.find(flower => flower>4)
-      
-    //    serChoocseforme(chooseforme)
 
   }
 
